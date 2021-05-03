@@ -15,10 +15,17 @@ namespace ACO_TSP
             {
                 int row = distModel.datas.GetLength(0);
                 int colums = distModel.datas.Length / row;
-                if (row == colums)
+                if (distModel.namefile.Split("_")[1] == "d")
                     for (int i = 0; i < 30; i++)
                         CostMatrix(distModel, row);
-
+                else 
+                    if (distModel.namefile.Split("_")[1] == "g")
+                        for (int i = 0; i < 30; i++)
+                            GeographicalDistance(distModel, row);
+                    else
+                        if (distModel.namefile.Split("_")[1] == "e")
+                            for (int i = 0; i < 30; i++)
+                                EuclidDistance(distModel, row);
             }
         }
 
@@ -121,7 +128,12 @@ namespace ACO_TSP
             writeFolder(distModel.namefile, maxMinAS.getBestSoFarTour(), maxMinAS.computeTourLength(maxMinAS.getBestSoFarTour()));
         }
 
-        public static void OxygenCoordinates(DistModel distModel, int noNodes, int noAnts)
+        public static void EuclidDistance(DistModel distModel, int noNodes)
+        {
+
+        }
+
+        public static void GeographicalDistance(DistModel distModel, int noNodes)
         {
 
         }
