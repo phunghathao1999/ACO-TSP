@@ -8,7 +8,7 @@ namespace ACO_TSP
     {
         public static void Main(string[] args)
         {
-            
+            Console.WriteLine("Start !!!");
             List<DistModel> distModels = new List<DistModel>();
             distModels = readFolder();
             foreach (DistModel distModel in distModels)
@@ -18,15 +18,13 @@ namespace ACO_TSP
                 if (distModel.namefile.Split("_")[1] == "d")
                     for (int i = 0; i < 30; i++)
                         CostMatrix(distModel, row);
-                else 
-                    if (distModel.namefile.Split("_")[1] == "g")
-                        for (int i = 0; i < 30; i++)
-                            GeographicalDistance(distModel, row);
-                    else
-                        if (distModel.namefile.Split("_")[1] == "e")
-                            for (int i = 0; i < 30; i++)
-                                EuclidDistance(distModel, row);
+                else
+                    if (distModel.namefile.Split("_")[1] == "e")
+                    for (int i = 0; i < 30; i++)
+                        EuclidDistance(distModel, row);
             }
+
+            Console.WriteLine("Complete !!!");
         }
 
         public static List<DistModel> readFolder()
@@ -81,25 +79,19 @@ namespace ACO_TSP
             string fileName = nameFile.Split("_")[0] + "_s.txt";
             string fullPath = folder + fileName;
 
-            
+            string[] tourString = new string[bestTour.Length + 1];
+            tourString[0] = cost.ToString();
+            for (int i = 1; i < bestTour.Length + 1; i++)
+                tourString[i] = bestTour[i - 1].ToString();
+
             try
             {
-                string[] tourString = new string[bestTour.Length + 1];
-                tourString[0] = cost.ToString();
-                for (int i = 1; i < bestTour.Length + 1; i++)
-                    tourString[i] = bestTour[i - 1].ToString();
-
                 string[] readLine = File.ReadAllLines(fullPath);
                 if (cost < Int32.Parse(readLine[0]))
                     File.WriteAllLines(fullPath, tourString);
             }
             catch (FileNotFoundException e)
             {
-                string[] tourString = new string[bestTour.Length + 1];
-                tourString[0] = cost.ToString();
-                for (int i = 1; i < bestTour.Length + 1; i++)
-                    tourString[i] = bestTour[i - 1].ToString();
-
                 File.WriteAllLines(fullPath, tourString);
             }
         }
@@ -130,12 +122,15 @@ namespace ACO_TSP
 
         public static void EuclidDistance(DistModel distModel, int noNodes)
         {
-
+            int[,] costMatrix = new int[noNodes, noNodes];
+            for (int i = 0; i < noNodes; i++)
+                for (int j = 0; j < noNodes; j++)
+                    costMatrix[i, j] = Convert.ToInt32(Math.Sqrt(Math.Pow(distModel.datas[i, 1] - distModel.datas[i, 2], 2) + Math.Pow(distModel.datas[j, 1] - distModel.datas[j, 2], 2)));
+            //Console.WriteLine("distModel.datas: " + distModel.datas[i, 1]);
+            //Console.WriteLine("distModel.datas: " + distModel.datas[i, 2]);
+            //Console.WriteLine("distModel.datas: " + Convert.ToInt32(Math.Sqrt(Math.Pow(distModel.datas[i, 1] - distModel.datas[i, 2], 2) + Math.Pow(distModel.datas[j, 1] - distModel.datas[j, 2], 2))));
+            CostMatrix(new DistModel(distModel.namefile, costMatrix), noNodes);
         }
 
-        public static void GeographicalDistance(DistModel distModel, int noNodes)
-        {
-
-        }
     }
 }

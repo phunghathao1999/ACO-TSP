@@ -11,3 +11,16 @@ C:\Users\phung\Desktop\OneDrive\Seminar\ACO-TSP\ACO-TSP\obj\Debug\netcoreapp3.1\
 C:\Users\phung\Desktop\OneDrive\Seminar\ACO-TSP\ACO-TSP\obj\Debug\netcoreapp3.1\ACO-TSP.dll
 C:\Users\phung\Desktop\OneDrive\Seminar\ACO-TSP\ACO-TSP\obj\Debug\netcoreapp3.1\ACO-TSP.pdb
 C:\Users\phung\Desktop\OneDrive\Seminar\ACO-TSP\ACO-TSP\obj\Debug\netcoreapp3.1\ACO-TSP.genruntimeconfig.cache
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\bin\Debug\netcoreapp3.1\ACO-TSP.exe
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\bin\Debug\netcoreapp3.1\ACO-TSP.deps.json
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\bin\Debug\netcoreapp3.1\ACO-TSP.runtimeconfig.json
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\bin\Debug\netcoreapp3.1\ACO-TSP.runtimeconfig.dev.json
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\bin\Debug\netcoreapp3.1\ACO-TSP.dll
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\bin\Debug\netcoreapp3.1\ACO-TSP.pdb
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\obj\Debug\netcoreapp3.1\ACO-TSP.csprojAssemblyReference.cache
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\obj\Debug\netcoreapp3.1\ACO-TSP.AssemblyInfoInputs.cache
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\obj\Debug\netcoreapp3.1\ACO-TSP.AssemblyInfo.cs
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\obj\Debug\netcoreapp3.1\ACO-TSP.csproj.CoreCompileInputs.cache
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\obj\Debug\netcoreapp3.1\ACO-TSP.dll
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\obj\Debug\netcoreapp3.1\ACO-TSP.pdb
+C:\Users\phung\Desktop\ACO-TSP\ACO-TSP\obj\Debug\netcoreapp3.1\ACO-TSP.genruntimeconfig.cache
