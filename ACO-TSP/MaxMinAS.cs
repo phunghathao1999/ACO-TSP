@@ -80,59 +80,11 @@ namespace ACO_TSP
             return ants[k];
         }
 
-        public double getPheromone(int i, int j)
-        {
-            return pheromone[i, j];
-        }
-        public double getHeuristic(int i, int j)
-        {
-            return choiceInfo[i, j];
-        }
-        public int getDistance(int i, int j)
-        {
-            return dist[i, j];
-        }
-        public void setPheromone(int i, int j, double ph)
-        {
-            pheromone[i, j] = ph;
-        }
-        public void setHeuristic(int i, int j, double h)
-        {
-            choiceInfo[i, j] = h;
-        }
         public void setDistance(int[,] dist)
         {
             this.dist = dist;
         }
-        public void setDistance(int i, int j, int d)
-        {
-            dist[i, j] = d;
-        }
-        public void setAlfa(double a)
-        {
-            alfa = a;
 
-        }
-        public void setBeta(double b)
-        {
-            beta = b;
-        }
-        public void setRo(double r)
-        {
-            ro = r;
-        }
-        public double getAlfa()
-        {
-            return alfa;
-        }
-        public double getBeta()
-        {
-            return beta;
-        }
-        public double getRo()
-        {
-            return ro;
-        }
         public int[] getBestTour()
         {
             int[] bestTour = new int[noNodes + 1];
@@ -174,22 +126,7 @@ namespace ACO_TSP
         {
             return iterations;
         }
-        public int getNoAnts()
-        {
-            return noAnts;
-        }
-        public void setNoAnts(int ants)
-        {
-            noAnts = ants;
-        }
-        public int getNoNodes()
-        {
-            return noNodes;
-        }
-        public void setNoNodes(int nodes)
-        {
-            noNodes = nodes;
-        }
+        
         public void initData()
         {
             int i, j;
@@ -304,7 +241,6 @@ namespace ACO_TSP
         }
         public void constructSolutions()
         {
-            /* stergere memorie furnici */
             initAnts();
 
             int step = 0;
@@ -313,11 +249,9 @@ namespace ACO_TSP
 
             Random rand = new Random();
 
-            /* asignare oras initial */
             for (k = 0; k < noAnts; k++)
             {
                 r = rand.Next(noNodes);
-                //Console.WriteLine("r: " + r);
 
                 ants[k].setTour(step, r);
                 ants[k].setVisited(r, true);
@@ -346,11 +280,7 @@ namespace ACO_TSP
                     pheromone[i, j] = (1 - ro) * pheromone[i, j];
                 }
         }
-        public void depositPheromone(int k)
-        {
-            // Aici nu fac nimic
 
-        }
         public void globalPheromoneDeposit()
         {
             double delta;
@@ -428,46 +358,20 @@ namespace ACO_TSP
         }
         public int computeTourLength(int[] tour)
         {
+            
             int len = 0;
             for (int i = 0; i < noNodes; i++)
             {
                 len += dist[tour[i], tour[i + 1]];
             }
+            //Console.WriteLine(len);
             return len;
         }
         private double computePheromone0()
         {
             return 1.0 / (((double)greedyTour()) * ro);
         }
-        public void opt2()
-        {
-            int i, j, k;
-            int a1, a2, a3, b1, b2, b3, swap;
-            /* pentru ficare furnicuta */
-            for (k = 0; k < noAnts; k++)
-            {
-                //long len1 = computeTourLength(ants[k].getTour());
-                for (i = 1; i < noNodes - 1; i++)
-                {
-                    a1 = dist[ants[k].getTour(i - 1), ants[k].getTour(i)];
-                    a2 = dist[ants[k].getTour(i), ants[k].getTour(i + 1)];
-                    a3 = dist[ants[k].getTour(i + 1), ants[k].getTour(i + 2)];
-
-                    b1 = dist[ants[k].getTour(i - 1), ants[k].getTour(i + 1)];
-                    b2 = dist[ants[k].getTour(i + 1), ants[k].getTour(i)];
-                    b3 = dist[ants[k].getTour(i), ants[k].getTour(i + 2)];
-
-                    if (a1 + a2 + a3 > b1 + b2 + b3)
-                    {
-                        swap = ants[k].getTour(i);
-                        ants[k].setTour(i, ants[k].getTour(i + 1));
-                        ants[k].setTour(i + 1, swap);
-                    }
-
-                }
-
-            }
-        }
+    
         public void localSearch()
         {
             /* Procedurile de cautare locala */
@@ -491,10 +395,7 @@ namespace ACO_TSP
             if (stagnationIterations > 0)
                 stagnationIterations--;
         }
-        public double[, ] getPheromoneMatrix()
-        {
-            return pheromone;
-        }
+
 
     }
 }

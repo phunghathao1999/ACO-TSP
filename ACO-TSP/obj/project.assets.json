@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\phung\\Desktop\\ACO-TSP\\ACO-TSP\\ACO-TSP.csproj",
-      "projectName": "ACO-TSP",
-      "projectPath": "C:\\Users\\phung\\Desktop\\ACO-TSP\\ACO-TSP\\ACO-TSP.csproj",
+      "projectUniqueName": "C:\\Users\\phung\\Desktop\\ACO-TSP\\ACO-TSP\\TSP-MMAS.csproj",
+      "projectName": "TSP-MMAS",
+      "projectPath": "C:\\Users\\phung\\Desktop\\ACO-TSP\\ACO-TSP\\TSP-MMAS.csproj",
       "packagesPath": "C:\\Users\\phung\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\phung\\Desktop\\ACO-TSP\\ACO-TSP\\obj\\",
       "projectStyle": "PackageReference",

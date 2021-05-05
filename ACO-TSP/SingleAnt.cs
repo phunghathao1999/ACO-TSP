@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace ACO_TSP
 {
     public class SingleAnt
@@ -46,6 +48,7 @@ namespace ACO_TSP
         }
         public void setTour(int idx, int val)
         {
+            //Console.WriteLine("val: " + val);
             tour[idx] = val;
 
         }

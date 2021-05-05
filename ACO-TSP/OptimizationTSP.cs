@@ -25,14 +25,13 @@ namespace ACO_TSP
                 b3 = dist[tour[i], tour[i + 2]];
                 if (a1 + a2 + a3 > b1 + b2 + b3)
                 {
-                    //System.out.println("opt2: optimization done!");
+                    //Console.WriteLine("opt2: optimization done!");
                     swap = tour[i];
                     tour[i] = tour[i + 1];
                     tour[i + 1] = swap;
                 }
             }
         }
-
 
         public void opt3(int[] tour)
         {
@@ -69,29 +68,29 @@ namespace ACO_TSP
                     case 0:     // ABC
                         break;
                     case 1:     // ACB
-                                //System.out.println("opt3: optimization done!");
+                        //Console.WriteLine("opt3: optimization done!");
                         this.swap(tour, i + 1, i + 2);
                         break;
                     case 2:     // BAC
-                                //System.out.println("opt3: optimization done!");
+                        //Console.WriteLine("opt3: optimization done!");
                         this.swap(tour, i, i + 1);
                         break;
                     case 3:     // BCA
-                                //System.out.println("opt3: optimization done!");
+                                //Console.WriteLine("opt3: optimization done!");
                                 // ABC -> BAC
                         this.swap(tour, i, i + 1);
                         // BAC -> BCA
                         this.swap(tour, i + 1, i + 2);
                         break;
                     case 4:     // CAB
-                                //System.out.println("opt3: optimization done!");
+                                //Console.WriteLine("opt3: optimization done!");
                                 // ABC -> CBA
                         this.swap(tour, i, i + 2);
                         // CBA -> CAB
                         this.swap(tour, i + 1, i + 2);
                         break;
                     case 5:     // CBA
-                                //System.out.println("opt3: optimization done!");
+                                //Console.WriteLine("opt3: optimization done!");
                         this.swap(tour, i, i + 2);
                         break;
 

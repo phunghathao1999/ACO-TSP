@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACO-TSP", "ACO-TSP\ACO-TSP.csproj", "{3A229948-7EA8-494C-9EFD-9B9A04B61126}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSP-MMAS", "ACO-TSP\TSP-MMAS.csproj", "{3A229948-7EA8-494C-9EFD-9B9A04B61126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
