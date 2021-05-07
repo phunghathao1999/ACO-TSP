@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="NewFolder\" />
+    <Folder Include="result\" />
   </ItemGroup>
 
 </Project>
