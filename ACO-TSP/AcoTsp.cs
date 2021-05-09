@@ -99,9 +99,10 @@ namespace ACO_TSP
         public static void CostMatrix(DistModel distModel, int noNodes)
         {
             int noAnts = Convert.ToInt32(noNodes / 2);
+            //int noAnts = 25;
             double alfa = 0.1;
             double beta = 0.3;
-            double globalEvapRate = 0.05;
+            double globalEvapRate = 0.02;
             bool doOpt2 = true;
             bool doOpt3 = true;
             MaxMinAS maxMinAS = new MaxMinAS(noNodes, noAnts, alfa, beta, globalEvapRate, doOpt2, doOpt3, 1000);
